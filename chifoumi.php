@@ -18,32 +18,34 @@
     </h3>
     <?php
       extract($_GET);
-      $coupOrdi=rand(0,2);
-      if($coupOrdi=='0')
-        echo"<img src='ciseaux.png' width='150'>";
-    
-      if($coupOrdi=='1')
-        echo"<img src='feuille.png' width='150'>";
-           
-      if($coupOrdi=='2')
-        echo"<img src='pierre.png' width='150'>";
-    
+          
       if(isset($coup)){
-      if($coup=='0')
-        echo"<img src='ciseaux.png' width='150'>";
         
-      if($coup=='1')
-        echo"<img src='feuille.png' width='150'>";
-           
-      if($coup=='2')
-        echo"<img src='pierre.png' width='150'>";
-      
-      if($coup == $coupOrdi)
-        echo"Egalité";
-      if($coup < $coupOrdi)
-        echo"Victoire";
-      if($coup > $coupOrdi)
-        echo"Défaite";
+        if($coup=='0')
+          echo"<img src='ciseaux.png' width='150'>";
+
+        if($coup=='1')
+          echo"<img src='feuille.png' width='150'>";
+
+        if($coup=='2')
+          echo"<img src='pierre.png' width='150'>";
+
+        $coupOrdi=rand(0,2);
+        if($coupOrdi=='0')
+          echo"<img src='ciseaux.png' width='150'>";
+
+        if($coupOrdi=='1')
+          echo"<img src='feuille.png' width='150'>";
+
+        if($coupOrdi=='2')
+          echo"<img src='pierre.png' width='150'>";
+
+        if($coup == $coupOrdi)
+          echo"Egalité";
+        if(($coup='0' && $coupOrdi='2')||($coup=='1' && $coupOrdi=='0')||($coup=='2' && $coupOrdi=='1'))
+          echo"Defaite";
+        if(($coup=='1' && $coupOrdi=='2')||($coup=='2' && $coupOrdi=='0')||($coup=='0' && $coupOrdi=='1'))
+          echo"Victoire";
        }
     ?>
     
