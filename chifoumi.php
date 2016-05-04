@@ -31,6 +31,7 @@
           echo"<img src='pierre.png' width='150'>";
 
         $coupOrdi=rand(0,2);
+        
         if($coupOrdi=='0')
           echo"<img src='ciseaux.png' width='150'>";
 
@@ -39,13 +40,15 @@
 
         if($coupOrdi=='2')
           echo"<img src='pierre.png' width='150'>";
-
-        if($coup == $coupOrdi)
-          echo"Egalité";
-        if(($coup=='0' && $coupOrdi=='2')||($coup=='1' && $coupOrdi=='0')||($coup=='2' && $coupOrdi=='1'))
-          echo"Defaite";
-        if(($coup=='1' && $coupOrdi=='2')||($coup=='2' && $coupOrdi=='0')||($coup=='0' && $coupOrdi=='1'))
-          echo"Victoire";
+       
+        $tableau =array(
+          "0"=>array("0"=>"Egalité","1"=>"Victoire","2"=>"Défaite"),
+          "1"=>array("1"=>"Egalité","0"=>"Défaite","2"=>"Victoire"),
+          "2"=>array("2"=>"Egalité","0"=>"Victoire","1"=>"Defaite"),
+        );
+        
+        $result= $tableau[$coup][$coupOrdi];
+        echo $result;
        }
     ?>
     
