@@ -42,7 +42,7 @@
 
         if($coup == $coupOrdi)
           echo"Egalité";
-        if(($coup='0' && $coupOrdi='2')||($coup=='1' && $coupOrdi=='0')||($coup=='2' && $coupOrdi=='1'))
+        if(($coup=='0' && $coupOrdi=='2')||($coup=='1' && $coupOrdi=='0')||($coup=='2' && $coupOrdi=='1'))
           echo"Defaite";
         if(($coup=='1' && $coupOrdi=='2')||($coup=='2' && $coupOrdi=='0')||($coup=='0' && $coupOrdi=='1'))
           echo"Victoire";
